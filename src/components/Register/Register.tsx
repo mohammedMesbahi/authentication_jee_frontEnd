@@ -26,7 +26,7 @@ const Register: React.FC = () => {
                 {headers: {'Content-Type': 'application/json'}}
             );
             setSuccessMessage(response.data);
-            navigate('/login?message=registered successfully');
+            navigate('/login?success=registered successfully');
         } catch (error: any) {
             setErrorMessage(error.response.data);
         }finally {
