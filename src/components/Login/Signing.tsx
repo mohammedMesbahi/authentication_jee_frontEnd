@@ -19,6 +19,7 @@ const Signing: React.FC = () => {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
         setErrorMessage('');
         setSuccessMessage('');
         try {
@@ -31,6 +32,8 @@ const Signing: React.FC = () => {
             navigate('/home?email=' + email);
         } catch (error: any) {
             setErrorMessage(error.response.data);
+        }finally {
+            setIsSubmitting(false);
         }
     };
 

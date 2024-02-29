@@ -16,18 +16,21 @@ const Register: React.FC = () => {
 
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
         setErrorMessage('');
         setSuccessMessage('');
         try {
             const response = await axios.post(
                 proxy.apiUrl + proxy.register,
-                {email, password},
+                {name,email, password},
                 {headers: {'Content-Type': 'application/json'}}
             );
             setSuccessMessage(response.data);
-            navigate('/login?message=' + response.data);
+            navigate('/login?message=registered successfully');
         } catch (error: any) {
             setErrorMessage(error.response.data);
+        }finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -51,7 +54,7 @@ const Register: React.FC = () => {
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" name="password" required
                        value={password} onChange={(e) => setPassword(e.target.value)}/>
-                <input type="submit" value={isSubmitting ? "Register" : "Registering..."} disabled={isSubmitting}
+                <input type="submit" value={isSubmitting ? "Registering.." : "Register"} disabled={isSubmitting}
                        className="submit-btn" onClick={handleRegister}/>
             </form>
             <p>Already have an account? <a href="/login">Sign In</a></p>
