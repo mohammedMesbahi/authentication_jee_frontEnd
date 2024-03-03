@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import './Home.css';
 import {useNavigate} from "react-router-dom";
+import { useEffect } from 'react';
 const Home: React.FC = () => {
     // take the email from the query string
     const [email, setEmail] = useState<string>(

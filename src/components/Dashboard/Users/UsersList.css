@@ -1,0 +1,8 @@
+.usersListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: auto;
+  width: 50%;
+  height: 300px;
+}

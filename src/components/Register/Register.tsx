@@ -35,29 +35,31 @@ const Register: React.FC = () => {
     };
 
     return (
-        <div className="signup-container">
-            <h2>Register</h2>
-            {errorMessage && <div className="error">
-                {errorMessage}
-            </div>}
-            {successMessage && <div className="success">
-                {successMessage}
-            </div>}
-            <form>
-                {/* name */}
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name"
-                       required value={name} onChange={(e) => setName(e.target.value)}/>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email"
-                       required value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" required
-                       value={password} onChange={(e) => setPassword(e.target.value)}/>
-                <input type="submit" value={isSubmitting ? "Registering.." : "Register"} disabled={isSubmitting}
-                       className="submit-btn" onClick={handleRegister}/>
-            </form>
-            <p>Already have an account? <a href="/login">Sign In</a></p>
+        <div className="parent_container">
+            <div className="signup-container">
+                <h2>Register</h2>
+                {errorMessage && <div className="error">
+                    {errorMessage}
+                </div>}
+                {successMessage && <div className="success">
+                    {successMessage}
+                </div>}
+                <form>
+                    {/* name */}
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" name="name"
+                           required value={name} onChange={(e) => setName(e.target.value)}/>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" id="email" name="email"
+                           required value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" name="password" required
+                           value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="submit" value={isSubmitting ? "Registering.." : "Register"} disabled={isSubmitting}
+                           className="submit-btn" onClick={handleRegister}/>
+                </form>
+                <p>Already have an account? <a href="/login">Sign In</a></p>
+            </div>
         </div>
     );
 };
