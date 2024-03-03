@@ -1,7 +1,23 @@
+    const apiUrl="http://localhost:9080/g-note/api/v1";
+    const authUrl = `${apiUrl}/auth`;
+    const login = `${authUrl}/login`;
+    const register = `${authUrl}/register`;
+    const logout = `${authUrl}/logout`;
+    const isAuthenticated = `${apiUrl}/isAuthenticated`;
+    const adminUrl = "http://localhost:9080/g-note/api/v1/admin";
+    const usersResource = `${adminUrl}/users`;
+    const verifyUser = `${adminUrl}/user/verify`;
+    const deleteUser =  `${adminUrl}/user`;
+
 export default {
-    apiUrl:" http://localhost:9080/g-note/api/v1/auth/",
-    login:"login",
-    register:"register",
-    logout:"logout",
-    isAuthenticated:"isAuthenticated",
-}
+    apiUrl,
+    authUrl,
+    login,
+    register,
+    logout,
+    isAuthenticated,
+    adminUrl,
+    usersResource,
+    verifyUser,
+    deleteUser
+};

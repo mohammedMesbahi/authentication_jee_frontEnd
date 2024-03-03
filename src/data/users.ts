@@ -1,4 +1,3 @@
-import User from "../Models/User";
 
 let users: { id: number, name: string, email: string, verified: boolean }[] = [];
 

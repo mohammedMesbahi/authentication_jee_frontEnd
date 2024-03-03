@@ -6,9 +6,9 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 const Register: React.FC = () => {
-    const [name, setName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
+    const [name, setName] = useState<string>('user3');
+    const [email, setEmail] = useState<string>('user3@gmail.com');
+    const [password, setPassword] = useState<string>('123456');
     const [successMessage, setSuccessMessage] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -21,7 +21,7 @@ const Register: React.FC = () => {
         setSuccessMessage('');
         try {
             const response = await axios.post(
-                proxy.apiUrl + proxy.register,
+                proxy.register,
                 {name,email, password},
                 {headers: {'Content-Type': 'application/json'}}
             );

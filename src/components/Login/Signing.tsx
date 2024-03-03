@@ -25,7 +25,7 @@ const Signing: React.FC = () => {
         setSuccessMessage('');
         try {
             const response = await axios.post(
-                proxy.apiUrl + proxy.login,
+                proxy.login,
                 {email, password},
                 {headers: {'Content-Type': 'application/json'}}
             );

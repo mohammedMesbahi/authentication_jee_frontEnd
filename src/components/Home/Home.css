@@ -4,7 +4,6 @@ nav {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    align-self: flex-start;
 }
 
 .user-info {
@@ -23,8 +22,68 @@ nav {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 99vw;
-    height: 99vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-direction: column;
+    height: 80vh;
+    padding: 20px;
+}
+.note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 34%;
+    /*margin: auto;*/
+}
+
+.note-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.note-form input[type="text"],
+.note-form textarea {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.note-form input[type="submit"] {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+.note-component {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.note-component h4 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.note-component p {
+    margin: 0;
+}
+.notes-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 66%;
+    gap: 10px;
+    padding-inline: 20px;
+    height: 400px;
+    overflow: auto;
 }
