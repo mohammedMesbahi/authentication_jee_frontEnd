@@ -4,6 +4,7 @@ import User from "../../Models/User";
 import {Button} from "@mui/material";
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+
 const columns: GridColDef[] = [
     {field: 'id', headerName: 'ID', width: 70},
     {field: 'name', headerName: 'Name', width: 130},
@@ -55,20 +56,25 @@ export default function UsersDataGrid({listOfUsers}: UsersTableProps) {
                 />
             </div>
             <center>
-                <Button variant="contained" color={'success'} style={{
+                <Button variant="contained"
+                        disabled={selectedUser == null || selectedUser.verified}
+                        color={'success'} style={{
                     margin: '10px'
                 }}>verify</Button>
-                <Button variant="outlined" color="error">delete</Button>
+                <Button variant="outlined"
+                        disabled={selectedUser == null || selectedUser.verified}
+
+                        color="error">delete</Button>
             </center>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'right',
-            }} >
+            }}>
                 <Alert
                     onClose={handleClose}
                     severity="success"
                     variant="filled"
-                    sx={{ width: '100%' }}
+                    sx={{width: '100%'}}
                 >
                     {message}
                 </Alert>
