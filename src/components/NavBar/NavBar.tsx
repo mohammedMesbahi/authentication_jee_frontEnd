@@ -4,7 +4,6 @@ import config from "../../configs/config";
 const NavBar = () => {
     // parse user data from local storage
     let user = JSON.parse(localStorage.getItem('user') || '{}');
-
     const navigate = useNavigate();
     const handleLogout = async (e: React.FormEvent) => {
         e.preventDefault();

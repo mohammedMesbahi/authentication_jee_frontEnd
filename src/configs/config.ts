@@ -8,6 +8,9 @@
     const usersResource = `${adminUrl}/users`;
     const verifyUser = `${adminUrl}/user/verify`;
     const deleteUser =  `${adminUrl}/user`;
+    const newNote =  `${apiUrl}/notes`;
+    const allNotes =  `${newNote}/all`;
+    const deleteNote=`${apiUrl}/notes`;
 
 export default {
     apiUrl,
@@ -19,5 +22,8 @@ export default {
     adminUrl,
     usersResource,
     verifyUser,
-    deleteUser
+    deleteUser,
+    newNote,
+    allNotes,
+    deleteNote
 };

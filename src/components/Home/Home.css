@@ -87,3 +87,22 @@ nav {
     height: 400px;
     overflow: auto;
 }
+
+.note-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.delete-btn{
+    color: #f00;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.delete-btn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

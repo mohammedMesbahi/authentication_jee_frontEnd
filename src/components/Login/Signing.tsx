@@ -5,6 +5,7 @@ import './Signing.css';
 import proxy from '../../configs/config';
 import {useNavigate} from "react-router-dom";
 import User from '../../Models/User';
+import { Cookie } from '@mui/icons-material';
 
 const Signing: React.FC = () => {
     const [email, setEmail] = useState<string>('admin1@gmail.com');
@@ -33,6 +34,7 @@ const Signing: React.FC = () => {
             let user: User = response.data;
             // store the user in the local storage
             localStorage.setItem('user', JSON.stringify(response.data));
+            //Cookie.set('userID',user.id);
             if (user.admin) {
                 navigate('/admin/dashboard');
             } else {
